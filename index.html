@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz Application</title>
+</head>
+<body>
+
+
+    <input id="valueEntered" type="text"  />
+
+    <input type="submit" value="calculate" onclick="fizzbuzz.calculate(document.querySelector('#valueEntered').value);"  />
+
+    <br>
+    <span id="output" >output: </span>
+
+    <script>
+
+        // basic use of a class calling a static method instend of using lone functions.
+        
+        class fizzbuzz {
+
+            static calculate(_input, _id = "#output") {
+
+                let value = _input;
+
+            
+                if(value.trim() != "" && !isNaN(parseInt(value))) {
+                    if((_input % 3) == 0 && (_input % 5) == 0) {
+                     value = "fizzbuzz";
+
+                } else if((_input % 3) == 0) {
+                     value = "fizz";
+
+                } else if ((_input % 5) == 0) {
+                     value = "buzz";
+
+                }  
+
+                document.querySelector("#output").innerText = `output: ${value}`;
+
+                } else {
+
+                    document.querySelector("#output").innerText =  `output: enter valid value`;
+                    
+                }
+               
+            }       
+            
+        }
+
+
+
+    </script>
+</body>
+</html>
